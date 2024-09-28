@@ -15,6 +15,7 @@ public class SpringDataJpaApplication {
 		Student s2 = context.getBean(Student.class);
 		Student s3 = context.getBean(Student.class);
 
+		// CREATING BEAN OF STUDENT-REPO INTERFACE
 		StudentRepo repo = context.getBean(StudentRepo.class);
 
 		s1.setRollNo(9180);
@@ -29,7 +30,16 @@ public class SpringDataJpaApplication {
 		s3.setName("Himanshu");
 		s3.setMarks(90);
 
+		// SAVING DATA IN PG ADMIN (INSERT OPERATION)
+		repo.save(s2);
+		repo.save(s3);
 		repo.save(s1);
+
+		// FETCHING THE DATA
+		System.out.println(repo.findAll());
+		// FETCHING BASED OF P_KEY (O/P ELSE EMPTY)
+		System.out.println(repo.findById(9184));
+
 	}
 
 }
