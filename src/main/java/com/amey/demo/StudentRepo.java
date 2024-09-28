@@ -13,6 +13,7 @@ import java.util.List;
 public interface StudentRepo extends JpaRepository<Student, Integer> {
     // THE ?1 -> WILL BE REPLACED BY 1ST PARAMETER
     @Query("select s from Student s where s.name = ?1") // QUERY ANNOTATION FOR JPA QUERY LANGUAGE
+    // THE NAME OF INTERFACE METHOD WILL BE USED AS REFERENCE FOR QUERY
     List<Student> findByName(String name);
 
 }
