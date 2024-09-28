@@ -39,7 +39,11 @@ public class SpringDataJpaApplication {
 		System.out.println(repo.findAll());
 		// FETCHING BASED OF P_KEY (O/P ELSE EMPTY)
 		System.out.println(repo.findById(9184));
+		// SEARCH BY COL_NAME
+		System.out.println(repo.findByName("Amey"));
 
+		// DELETE
+		// repo.delete(s1);
 	}
 
 }
